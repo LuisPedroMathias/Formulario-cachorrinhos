@@ -1,5 +1,7 @@
 body {
-    background: image();
+  background-image: url('assets/download.jpg');
+  background-size: 25%;
+  background-repeat: repeat;
 }
 
 form {
@@ -9,10 +11,26 @@ form {
 }
 
 input {
-    background-color:  #E8D9C0;
+    background-color: #E8D9C0;
     border: none;
     border-bottom: 2px solid #7A5C42;
     color: white;
     outline: none;
     height: 25px;
+}
+
+.flex{
+    display: flex;
+}
+
+.dogs{
+    background-color: #7A5C42;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.formulario{
+    background-color: #E8D9C0;
+    padding: 10px;
+    border-radius: 10px;
 }
