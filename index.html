@@ -10,45 +10,81 @@
 <body>
 
     <div class="formulario">
-        
         <form>
-            <h1>Formulário para adoção</h1>
-            <label for="nome">Nome completo:</label>
-            <input type="text" id="nome">
-            <br>
-            <label for="e-mail">e-mail:</label>
-            <input type="text" id="e-mail">
-            <br>
-            <label for="Telefone">Telefone:</label>
-            <input type="tel" id="Telefone">
-            <br>
-            <label for="CPF">CPF:</label>
-            <input type="text" id="CPF">
-            <br>
-            <label for="idade">Idade:</label>
-            <input type="number" id="idade">
-            <br>
-            <label for="cidade">Cidade:</label>
-            <input type="text" id="cidade">
-            <br>
-            <label for="moradia">Tipo de moradia(casa ou apartamento):</label>
-            <input type="text" id="moradia">
-            <br>
-            <label for="quintal">Possui quintal? (sim ou não):</label>
-            <input type="text" id="quintal">
-            <br>
-            <label for="expet">Já teve pet antes? (sim ou não)</label>
-            <input type="text" id="expet">
-            <br>
-            <label for="horas">Quantas horas o animal ficará sozinho por dia?:</label>
-            <input type="number" id="horas">
-            <br>
-            <label for="motivo">Motivo da adoção:</label>
-            <input type="text" id="motivo">
-            <br>
-            <label for="termo">Aceite o termo de responsabilidade:</label>
-        </form>
 
+            <div class="perguntas">
+                <center>
+                    <h1>Formulário para adoção</h1>
+                </center>
+                <div>
+                    <label for="nome">Nome completo:</label>
+                    <input type="text" id="nome">
+                </div>
+                <br>
+                <div>
+                    <label for="e-mail">e-mail:</label>
+                    <input type="text" id="e-mail">
+                </div>
+                <br>
+                <div>
+                    <label for="Telefone">Telefone:</label>
+                    <input type="tel" id="Telefone">
+                </div>
+                <br>
+                <div>
+                    <label for="CPF">CPF:</label>
+                    <input type="text" id="CPF">
+                </div>
+                <br>
+                <div>
+                    <label for="idade">Idade:</label>
+                    <input type="number" id="idade">
+                </div>
+                <br>
+                <div>
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" id="cidade">
+                </div>
+                <br>
+                <div>
+                    <label for="moradia">Tipo de moradia:</label>
+                    <select name="text" id="moradia">
+                        <option value="text">Casa</option>
+                        <option value="text">Apartamento</option>
+                    </select>
+                </div>
+                <br>
+                <div>
+                    <label for="quintal">Possui quintal?:</label>
+                    <select name="text" id="quintal">
+                        <option value="text">Sim</option>
+                        <option value="text">Não</option>
+                    </select>
+                </div>
+                <br>
+                <div>
+                    <label for="expet">Já teve pet antes?:</label>
+                    <select name="text" id="expet">
+                        <option value="text">Sim</option>
+                        <option value="text">Não</option>
+                    </select>
+                </div>
+                <br>
+                <div>
+                    <label for="horas">Quantas horas o animal ficará sozinho por dia?:</label>
+                    <input type="number" id="horas">
+                </div>
+                <br>
+                <div>
+                    <label for="motivo">Motivo da adoção:</label>
+                    <input type="text" id="motivo">
+                </div>
+                <br>
+                <label for="termo">Aceite o termo de responsabilidade:</label>
+                <input type="checkbox" id="termo">
+            </div>
+
+        </form>
     </div>
 
 </body>

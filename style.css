@@ -1,36 +1,37 @@
 body {
-  background-image: url('assets/download.jpg');
-  background-size: 25%;
-  background-repeat: repeat;
+    background-image: url('assets/download.jpg');
+    background-size: 25%;
+    background-repeat: repeat;
+    justify-content: center;
 }
 
 form {
     font-family: 'Nunito', sans-serif;
     font-weight: bold;
-    color: #7A5C42;
+    color: #ffffff;
 }
 
 input {
-    background-color: #E8D9C0;
+    background-color: #1e2b3d;
     border: none;
-    border-bottom: 2px solid #7A5C42;
+    border-bottom: 2px solid #ffffff;
     color: white;
     outline: none;
     height: 25px;
 }
 
-.flex{
+.flex {
     display: flex;
 }
 
-.dogs{
-    background-color: #7A5C42;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.formulario{
-    background-color: #E8D9C0;
-    padding: 10px;
+.perguntas {
     border-radius: 10px;
+
+    padding: 10px;
+    background-color: #1e2b3d;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 10%;
 }
