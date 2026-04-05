@@ -42,4 +42,35 @@ function enviar() {
     if (!cidade) {
         erros.push("Cidade é obrigatória.");
     }
+
+    if (!moradia) {
+        erros.push("Tipo de moradia é obrigatório.");
+    }
+
+    if (!quintal) {
+        erros.push("Informação sobre quintal é obrigatória.");
+    }
+
+    if (!expet) {
+        erros.push("Informação sobre experiência com pets é obrigatória.");
+    }
+
+    if (isNaN(horas) || horas < 0) {
+        erros.push("Informe um valor numérico válido para as horas que o animal ficará sozinho.");
+    }
+
+    if (motivo.length < 10) {
+        erros.push("Motivo da adoção deve ter no mínimo 10 caracteres.");
+    }
+
+    if (!termo) {
+        erros.push("Você deve aceitar o termo de responsabilidade para enviar o formulário.");
+    }
+
+    const motivoLower = motivo.toLowerCase();
+    const motivosGenericos = ["quero", "porque sim", "pq sim", "não sei", "nao sei", "só quero", "so quero"];
+    const motivoGenerico = motivosGenericos.some(gen => motivoLower === gen || motivoLower.trim() === gen);
+    if (motivoGenerico) {
+        erros.push("O motivo da adoção não pode ser genérico. Por favor, descreva melhor sua intenção.");
+    }
 }
