@@ -73,4 +73,50 @@ function enviar() {
     if (motivoGenerico) {
         erros.push("O motivo da adoção não pode ser genérico. Por favor, descreva melhor sua intenção.");
     }
+
+     if (motivoLower.includes("sem condição") || motivoLower.includes("sem condições") || motivoLower.includes("não tenho dinheiro") || motivoLower.includes("nao tenho dinheiro") || motivoLower.includes("sem grana") || motivoLower.includes("financeiramente impossível")) {
+        erros.push("Identificamos uma possível limitação financeira no motivo informado. O envio foi bloqueado. Por favor, entre em contato com a ONG para mais informações.");
+    }
+
+    if (moradia === "Apartamento") {
+        const permiteAnimais = confirm("Sua moradia é um apartamento. O condomínio permite animais de estimação?");
+        if (!permiteAnimais) {
+            erros.push("Infelizmente não é possível realizar a adoção se o condomínio não permite animais.");
+        }
+    }
+
+    if (moradia === "Casa") {
+        const quintalSeguro = confirm("Você mora em casa. O quintal é seguro e cercado para o animal?");
+        if (!quintalSeguro) {
+            alert("Atenção: É altamente recomendável garantir que o quintal seja seguro antes de receber o animal.");
+        }
+    }
+
+    if (moradia === "Apartamento" && quintal === "Sim") {
+        erros.push("Inconsistência: quem mora em apartamento não pode indicar que possui quintal.");
+    }
+
+    if (erros.length > 0) {
+        alert("Por favor, corrija os seguintes erros:\n\n" + erros.map((e, i) => `${i + 1}. ${e}`).join("\n"));
+        return;
+    }
+
+    if (!isNaN(horas) && horas > 8) {
+        const justificativa = prompt("O animal ficará mais de 8 horas sozinho por dia. Isso pode prejudicar seu bem-estar.\n\nPor favor, forneça uma justificativa adicional para prosseguir:");
+        if (!justificativa || justificativa.trim().length < 10) {
+            alert("Envio cancelado. É necessário fornecer uma justificativa válida para o animal ficar mais de 8 horas sozinho.");
+            return;
+        }
+    }
+
+    if (expet === "Não") {
+        alert("Informação importante: Como você nunca teve um pet antes, nossa ONG poderá realizar acompanhamento periódico para garantir o bem-estar do animal adotado. Fique tranquilo(a), estaremos aqui para ajudar!");
+    }
+
+    const motivoLowerFinal = motivo.toLowerCase();
+    if (motivoLowerFinal.includes("hoje") || motivoLowerFinal.includes("agora") || motivoLowerFinal.includes("acabei de decidir") || motivoLowerFinal.includes("decidi hoje")) {
+        alert("Alerta: Parece que sua decisão de adotar foi tomada de forma muito recente. Adotar um animal é uma decisão de longo prazo. Recomendamos que você reflita com calma antes de prosseguir.");
+    }
+
+    alert("Formulário enviado com sucesso! Entraremos em contato em breve. Obrigado pelo interesse em adotar!");
 }
